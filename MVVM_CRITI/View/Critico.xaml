@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVM_CRITI.View.Critico">
+    <StackLayout>
+        <Label Text="ACTIVIDAD: CRITICOGRAFO"
+               FontSize="18"
+               HorizontalOptions="Center"
+               FontAttributes="Bold"/>
+
+        <Line  X1="500"
+               Y1="0"
+               X2="0"
+               Y2="0"
+               Stroke="black"
+               HorizontalOptions="Center"
+               Margin="0,0,0,0"/>
+
+        <Label Text="NOMBRE:"
+               FontSize="18"
+               Padding="15,5,0,0"/>
+
+        <!--WNTRY PARA INGRESAR EL NOMBRE-->
+        <Entry Placeholder="INGRESA EL NOMBRE" 
+               FontSize="15"
+               Margin="10,-5,10,0"
+               x:Name="Nombre"
+               Text="{Binding Nombre}"/>
+
+        <!--ELEGIR EL GENERO DE LA PERSONA-->
+        <Label Text="GENERO:"
+               FontSize="18"
+               Margin="10,10,10,0"
+               />
+
+
+        <StackLayout Padding="30,10,0,0">
+            <Grid>
+                <RadioButton Content="Hombre"
+                         Grid.Row="0"
+                         Grid.Column="0"
+                             x:Name="Hombre"
+                             IsChecked="{Binding Hombre}"
+                         />
+                <RadioButton Content="Mujer"
+                         Grid.Row="0"
+                         Grid.Column="1"
+                             x:Name="Mujer"
+                             IsChecked="{Binding Mujer}"
+                         />
+            </Grid>
+        </StackLayout>
+        <StackLayout Padding="30,0,0,0">
+            <Grid>
+                <CheckBox Grid.Row="0"
+                          Grid.Column="0"
+                          IsChecked="{Binding Alto}"
+                              />
+                <Label    Text="ALTO"
+                          Grid.Row="0"
+                          Grid.Column="1"
+                          Padding="-55,6,0,0"/>
+
+                <CheckBox IsChecked="{Binding Listo}"
+                          Grid.Row="1"
+                          Grid.Column="0"
+                          x:Name="Listo"
+                              />
+                <Label    Text="LISTO"
+                          Grid.Row="1"
+                          Grid.Column="1"
+                          Padding="-55,5,0,0"/>
+
+                <CheckBox IsChecked="{Binding Raro}"
+                          Grid.Row="2"
+                          Grid.Column="0"
+                          x:Name="Raro"
+                             />
+                <Label    Text="RARO"
+                          Grid.Row="2"
+                          Grid.Column="1"
+                          Padding="-55,5,0,0"/>
+                <!--PARTE 2-->
+
+                <CheckBox IsChecked="{Binding Feo}" 
+                          Grid.Row="0"
+                          Grid.Column="2"
+                          x:Name="Feo"
+                              />
+                <Label    Text="FEO"
+                          Grid.Row="0"
+                          Grid.Column="3"
+                          Padding="-55,5,0,0"/>
+
+                <CheckBox IsChecked="{Binding Extravagante}"
+                          Grid.Row="1"
+                          Grid.Column="2"
+                          x:Name="Extravagante"
+                              />
+                <Label    Text="EXTRAVAGANTE"
+                          Grid.Row="1"
+                          Grid.Column="3"
+                          Padding="-55,5,0,0"/>
+
+                <CheckBox IsChecked="{Binding Grande}"
+                          Grid.Row="2"
+                          Grid.Column="2"
+                          Margin="0,0,0,0"
+                          x:Name="Grande"
+                              />
+                <Label    Text="GRANDE"
+                          Grid.Row="2"
+                          Grid.Column="3"
+                          Padding="-55,10,0,0"/>
+            </Grid>
+        </StackLayout>
+        <Button CornerRadius="15"
+                Margin="111,20,111,0"
+                Text="CRITITCAR"
+                FontAttributes="Bold"
+                FontSize="20"
+                BorderColor="Black"
+                BorderWidth="1"
+                BackgroundColor="LightCyan"
+                Command="{Binding ProcesoAsyncommand}"
+                />
+        <Frame BorderColor="Black"
+               BackgroundColor="LightBlue"
+               Margin="10,10,10,0"
+               CornerRadius="5">
+            <Entry  Placeholder="Aqui aparecerá la critica"
+                Margin="20,0,20,0"
+                FontAttributes="Bold"
+                IsEnabled="False"
+                    x:Name="Critica"
+                    Text="{Binding Critica}"/>
+        </Frame>
+    </StackLayout>
+</ContentPage>
